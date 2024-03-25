@@ -1,0 +1,11 @@
+#!/bin/csh
+echo "enter your basic salary"
+read sal
+da=`expr $sal \* 40 / 100`
+ha=`expr $sal \* 20 / 100`
+nsal=`expr $sal + $ha + $da`
+echo "your basic salary $sal"
+echo "your dearly allowance $da"
+echo "your house rent $ha"
+echo "---------"
+echo "your net salary is rs $nsal"
