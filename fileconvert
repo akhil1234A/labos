@@ -1,0 +1,7 @@
+#!/bin/csh
+echo "enter a filename"
+read file
+echo "the filename $file before converting to lowercase"
+cat $file
+echo "the filename $file after convertin to uppercase"
+cat $file | tr '[a-z]' '[A-Z]'
