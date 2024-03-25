@@ -1,0 +1,11 @@
+#!/bin/csh
+echo "enter a string"
+read s
+t=`echo $s | rev`
+echo "reverse of string is $t"
+if [ "$s" != "$t" ]
+then
+echo " Given string is not a palindrome"
+else
+echo " Given string palindrome"
+fi
