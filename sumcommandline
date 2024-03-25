@@ -1,9 +1,11 @@
 #!/bin/csh
+n=$#
 sum=0
+avg=0
 for i in $*
-do 
-sum=`expr $sum +$i`
-avg=$(( ($sum / $#) ))
+do
+sum=`expr $sum + $i`
 done
-echo "summation of "$#" no.is:"$sum
-echo "average of "$#" numbers are :"$avg
+avg=$(($sum / $n))
+echo " sum  of "$*" is: $sum"
+echo " avg of "$*" is: $avg"
