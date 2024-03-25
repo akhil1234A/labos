@@ -1,0 +1,61 @@
+#!/bin/csh
+
+sum=0
+
+foreach i ( $* )
+    sum=`expr $sum + $i`
+    @ count++
+end
+
+@ avg = $sum / $count
+
+echo "Summation of $count numbers is: $sum"
+echo "Average of $count numbers is: $avg"
+
+Calculator
+
+#!/bin/csh
+
+clear
+sum=0
+i="y"
+
+echo "Enter the first number:"
+read n
+
+echo "Enter the second number:"
+read m
+
+while [ "$i" = "y" ]
+do
+    echo "1. Addition"
+    echo "2. Subtraction"
+    echo "3. Multiplication"
+    echo "4. Division"
+    echo "0. Exit"
+    
+    echo "Enter your choice:"
+    read ch
+
+    case $ch in
+        1) sum=$(( $n + $m ))
+           echo "Sum = $sum";;
+        2) sum=$(( $n - $m ))
+           echo "Difference = $sum";;
+        3) sum=$(( $n * $m ))
+           echo "Product = $sum";;
+        4) sum=$(( $n / $m ))
+           echo "Division = $sum";;
+        0) echo "Exiting..."
+           exit;;
+        *) echo "Invalid choice";;
+    esac
+
+    echo "Do you want to continue? (y/n)"
+    read i
+
+    if [ "$i" != "y" ]
+    then
+        exit
+    fi
+done
