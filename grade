@@ -1,0 +1,34 @@
+#!/bin/csh
+echo -n "Enter registration number: "
+read regno
+echo "Enter student name: "
+read sname
+echo "Enter marks of 5 subjects:"
+read m1
+read m2
+read m3
+read m4
+read m5
+s=`expr $m1 + $m2 + $m3 + $m4 + $m5`
+a=`expr $s / 5`
+if [ $a -ge 90 ]
+then
+    gr="A"
+elif [ $a -ge 80 ]
+then
+    gr="B"
+elif [ $a -ge 60 ]
+then
+    gr="C"
+elif [ $a -ge 40 ]
+then
+    gr="D"
+else
+    gr="E"
+fi
+
+echo "Register number: $regno"
+echo "Student name: $sname"
+echo "Total marks of 5 subjects: $s"
+echo "Average marks of 5 subjects: $a"
+echo "Grade: $gr"
